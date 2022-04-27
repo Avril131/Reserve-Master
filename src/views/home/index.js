@@ -1,13 +1,12 @@
+import React, { Component } from 'react';
 
-
-class reserve{
-    render() {
+class home extends Component {
+   render() {
       return (
-        <div>home
-        </div>
-      )
-    }
-  }
-  
-  export default reserve
-  
+         <div>
+            <h2>home</h2>
+         </div>
+      );
+   }
+}
+export default home;

@@ -1,18 +1,20 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import home from "./views/home";
-import reserve from "./views/reserve";
+import Home from "./views/home";
+import Reserve from "./views/reserve/index";
 import Navbar from "./common/Navbar";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route exact path="/" component={home} />
-        <Route exact path="/home" component={home} />
-        <Route exact path="/mint" component={reserve} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/reserve" element={<Reserve />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }

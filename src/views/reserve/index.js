@@ -1,12 +1,12 @@
+import React, { Component } from 'react';
 
-
-class reserve{
-  render() {
-    return (
-      <div>reserve
-      </div>
-    )
-  }
+class reserve extends Component {
+   render() {
+      return (
+         <div>
+            <h2>reserve</h2>
+         </div>
+      );
+   }
 }
-
-export default reserve
+export default reserve;
