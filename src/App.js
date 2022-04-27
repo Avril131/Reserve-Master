@@ -1,15 +1,18 @@
-import { Layout, Menu } from "antd";
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
-import React from "react";
-import "antd/dist/antd.css";
-import "./App.less";
-import Classroom from "./views/classroom";
-const { Header, Content, Footer, Sider } = Layout;
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import home from "./views/home";
+import reserve from "./views/reserve";
+import Navbar from "./common/Navbar";
 
-function App() {
-  return <div className="App">
-    <Classroom />
-  </div>;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" component={home} />
+        <Route exact path="/home" component={home} />
+        <Route exact path="/mint" component={reserve} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App;
