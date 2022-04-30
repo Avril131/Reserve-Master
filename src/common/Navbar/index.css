@@ -1,7 +1,8 @@
 #navbar {
     width: 256px;
-    height: 600px;
+    height: 700px;
     border-right: 1px solid #f2f2f2;
+    position: absolute;
 }
 
 .pic {

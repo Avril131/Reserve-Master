@@ -1,0 +1,9 @@
+#home {
+  display: flex;
+  flex-direction: column;
+  height: 580px;
+}
+#home .carousel_part img {
+  width: 600px;
+  height: 337.5px;
+}

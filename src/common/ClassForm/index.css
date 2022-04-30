@@ -1,0 +1,18 @@
+#classForm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 140px;
+}
+#classForm .b_form {
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
+#classForm .r_form {
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
