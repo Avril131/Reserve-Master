@@ -1,0 +1,47 @@
+#reserve {
+  display: flex;
+  flex-direction: column;
+  margin-left: 256rem;
+  width: 1158rem;
+}
+#reserve .ant-page-header-heading-title {
+  width: fit-content !important;
+  font-size: 25rem;
+}
+#reserve #choose_box {
+  display: flex;
+  margin-left: 20rem;
+  margin-top: 20rem;
+}
+#reserve #choose_box p {
+  margin-bottom: 15rem;
+  width: fit-content;
+  height: 24rem;
+  font-size: 20rem;
+  font-family: italic 2em Georgia, serif;
+  font-weight: bold;
+  line-height: 24rem;
+  color: #333333;
+  opacity: 1;
+}
+#reserve #choose_box #choose_day .ant-radio-button-wrapper {
+  font-size: 14rem;
+  height: 32rem;
+  line-height: 32rem;
+  padding: 0 15rem;
+  font-family: Verdana;
+}
+#reserve #choose_box #choose_start {
+  margin-left: 40rem;
+}
+#reserve #choose_box #choose_last {
+  margin-left: 40rem;
+}
+#reserve #choose_box .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  height: 32rem;
+}
+#reserve #choose_box .ant-select-single .ant-select-selector .ant-select-selection-item {
+  line-height: 32rem;
+  font-size: 14rem;
+  font-family: Verdana;
+}
