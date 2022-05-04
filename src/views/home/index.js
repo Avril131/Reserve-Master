@@ -22,7 +22,7 @@ class home extends Component {
                   <img src={img1}></img>
                </div>
             </Carousel>
-            <Form sta={[1,1,0,1,0]}/>
+            <Form sta={[1,1,0,1,0,1,1,1,1,1,1,1,0]}/>
          </div>
       );
    }
