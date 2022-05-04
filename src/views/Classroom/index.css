@@ -1,0 +1,61 @@
+#classroom {
+  width: 1410rem;
+  flex-wrap: wrap;
+}
+#classroom .ant-carousel {
+  width: 1200px;
+  margin: 0 auto;
+}
+#classroom .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  width: 1200px;
+}
+#classroom .head .title {
+  width: fit-content;
+  height: 48px;
+  margin-bottom: 0px;
+  font-size: 40px;
+  font-family: Verdana;
+  font-weight: bold;
+  line-height: 48px;
+  color: #333333;
+  opacity: 1;
+}
+#classroom .down {
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+}
+#classroom .down .detail_title {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  width: fit-content;
+  height: 36px;
+  font-size: 30px;
+  font-family: Verdana;
+  font-weight: bold;
+  line-height: 36px;
+  color: #333333;
+  opacity: 1;
+}
+#classroom .down .detail_body {
+  margin-top: 14px;
+  width: 600px;
+  font-size: 16px;
+  font-family: Verdana;
+  font-weight: 400;
+  color: #333333;
+  opacity: 1;
+}
+#classroom .photo img {
+  width: 1200px;
+  height: 300px;
+}
+#content #content_right .page_footer {
+  height: 15rem;
+  justify-content: center;
+  padding-left: 0;
+}

@@ -30,8 +30,8 @@ export default function Navbar() {
       </a>
     <Menu
       style={{
-        width: 256,
-        height: 300,
+        width: "256rem",
+        height: "300rem",
         position: "absolute",
         overflow: "hidden",
       }}
