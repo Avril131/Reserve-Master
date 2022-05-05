@@ -1,12 +1,103 @@
 #home {
+  display: flex;
+  flex-direction: column;
+  height: 580rem;
+  margin-left: 256rem;
+  #home_content {
     display: flex;
-    flex-direction: column;
-    height: 580rem;
-    margin-left: 256rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
     .carousel_part {
-        img {
-            width: 600rem;
-            height: 337.5rem;
-        }
+      img {
+        width: 600rem;
+        height: 348rem;
+      }
     }
+    #form_part {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      margin-left: 5rem;
+
+      #form_h {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 10rem;
+        .form_head {
+          font-family: verdana;
+          font-weight: bold;
+          font-size: 20rem;
+          line-height: 20rem;
+          margin-top: 5rem;
+        }
+        button {
+            display: inline-block;
+            border-radius: 6px;
+            background-color: #6666FF;            ;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 18rem;
+            font-family: verdana;
+            width: 100rem;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            margin-left: 70rem;
+            vertical-align:middle;
+          }
+          
+          button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          
+          button span:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20rem;
+            transition: 0.5s;
+          }
+          
+          button:hover span {
+            padding-right: 25rem;
+          }
+          
+          button:hover span:after {
+            opacity: 1;
+            right: 0;
+          }
+      }
+
+      #select {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .choose_p {
+          line-height: 32rem;
+          margin-right: 3rem;
+          font-family: Verdana;
+          font-size: 15rem;
+          font-weight: bold;
+        }
+        #choose_day {
+          display: flex;
+          flex-direction: row;
+        }
+        #choose_start {
+          display: flex;
+          flex-direction: row;
+        }
+        #choose_last {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+  }
 }

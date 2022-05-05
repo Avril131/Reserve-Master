@@ -1,18 +1,22 @@
 #classForm {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  height: 140px;
+  height: 240rem;
+  width: 530rem;
+  margin-top: 10rem;
 }
 #classForm .b_form {
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
+  background-color: white;
+  width: 77rem;
+  height: 20rem;
+  border: 1rem solid gray;
+  margin: 0;
 }
 #classForm .r_form {
-  background-color: red;
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
+  background-color: #CCE6FF;
+  width: 77rem;
+  height: 20rem;
+  border: 1rem solid gray;
+  margin: 0;
 }

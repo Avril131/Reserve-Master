@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "antd";
 import Home from "./views/home";
-import Reserve from "./views/reserve/index";
+import Reserve from "./views/reserve";
 import About from './views/about'
 import Classroom from './views/Classroom'
 import Person from "./views/Person";
