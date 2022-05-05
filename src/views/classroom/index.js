@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 import Back from "../../common/Back/index";
 import { Carousel } from "antd";
 import img1 from "../../asset/1.JPG";
+import axios from "axios";
 import "./index.css";
-import request from "../../api/request";
 
 export default function Classroom() {
   let params = useParams();
@@ -13,12 +13,12 @@ export default function Classroom() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = request("get", "/classroom/all");
-      setData(result.data);
-      console.log(data);
+      axios.get("http://www.qxdw.org.cn:5772/classroom/all").then((res) => {
+        console.log("执行了");
+        console.log(res.data);
+    });
     };
     fetchData();
-    console.log("执行了");
   }, []);
   return (
     <div id="classroom">

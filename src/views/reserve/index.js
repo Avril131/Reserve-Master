@@ -9,16 +9,28 @@ const { Option } = Select;
 class reserve extends Component {
   constructor(props) {
     super(props); //调用父类构造函数
-
     this.state = {
       classroom_list: [],
-      day: 0,
-      start: 1,
-      last: 1,
+      day: "0",
+      start: "1",
+      last: "1",
     };
     //直接用state里的值 ： this.state
     //改变state里的值 : this.setState({ })
   }
+
+  componentDidMount = () => {
+    if (localStorage.day) {
+      this.setState({
+        day: localStorage.day,
+        start: localStorage.start,
+        last: localStorage.last,
+      });
+      localStorage.removeItem("day");
+      localStorage.removeItem("start");
+      localStorage.removeItem("last");
+    }
+  };
 
   change_List = () => {
     /**请求list再进行修改 */
@@ -46,6 +58,7 @@ class reserve extends Component {
   };
 
   render() {
+    console.log(this.state.day);
     return (
       <div>
         <Navbar />
@@ -58,7 +71,7 @@ class reserve extends Component {
           <div id="choose_box">
             <div id="choose_day">
               <p>Choose Day</p>
-              <Radio.Group onChange={this.onChange} defaultValue="1">
+              <Radio.Group onChange={this.onChange} defaultValue={this.state.day} key={this.state.day}>
                 <Radio.Button value="1">Monday</Radio.Button>
                 <Radio.Button value="2">Tuesday</Radio.Button>
                 <Radio.Button value="3">Wednesday</Radio.Button>
@@ -70,7 +83,12 @@ class reserve extends Component {
             </div>
             <div id="choose_start">
               <p>Start</p>
-              <Select defaultValue="1" style={{ width: "60rem" }} onChange={this.handleChange_start}>
+              <Select
+                defaultValue={this.state.start}
+                key={this.state.start}
+                style={{ width: "60rem" }}
+                onChange={this.handleChange_start}
+              >
                 <Option value="1">1</Option>
                 <Option value="2">2</Option>
                 <Option value="3">3</Option>
@@ -87,7 +105,12 @@ class reserve extends Component {
             </div>
             <div id="choose_last">
               <p>continue</p>
-              <Select defaultValue="1" style={{ width: "60rem",height: "32rem" }} onChange={this.handleChange_last}>
+              <Select
+                defaultValue={this.state.last}
+                key={this.state.last}
+                style={{ width: "60rem", height: "32rem" }}
+                onChange={this.handleChange_last}
+              >
                 <Option value="1">1</Option>
                 <Option value="2" disabled={this.state.start > 11 ? true : false}>
                   2

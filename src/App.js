@@ -5,6 +5,7 @@ import Home from "./views/home";
 import Reserve from "./views/reserve/index";
 import About from './views/about'
 import Classroom from './views/Classroom'
+import Person from "./views/Person";
 
 const { Footer } = Layout;
 
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/reserve" element={<Reserve />} />
             <Route path="/about" element={<About />} />
             <Route path="/classroom/:id" element={<Classroom />} />
+            <Route path="/person/:no" element={<Person />} />
           </Routes>
           <Footer className='page_footer'>© 2022 Reserve Master Lab</Footer>
         </div>
