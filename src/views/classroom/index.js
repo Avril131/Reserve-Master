@@ -5,7 +5,7 @@ import Back from "../../common/Back/index";
 import { Carousel } from "antd";
 import img1 from "../../asset/1.JPG";
 import "./index.css";
-import request from "../../api/request";
+
 
 export default function Classroom() {
   let params = useParams();
@@ -13,7 +13,7 @@ export default function Classroom() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = request("get", "/classroom/all");
+      const result = 1
       setData(result.data);
       console.log(data);
     };
