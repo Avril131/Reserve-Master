@@ -1,0 +1,100 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 200rem;
+    width: 800rem;
+    border-radius: 15px;
+    margin-left: 30rem;
+    margin-top: 30rem;
+    box-shadow: 0px 10px 20px rgba(5, 5, 5, 0.31);
+    opacity: 1;
+    border-radius: 44px;
+
+    .pic {
+        border-radius: 15px;
+        width: 400rem;
+        height: 150rem;
+        margin: 25rem 24rem;
+    }
+
+    .title {
+        width: 64rem;
+        height: 22rem;
+        margin-top: 20rem;
+        font-size: 12rem;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: #FFFFFF;
+        opacity: 1;
+        background: #81d4fa;
+        border-radius: 15px;
+        text-align: center;
+        line-height: 22rem;
+    }
+
+    .location {
+        margin: 0;
+        font-size: 30rem;
+        height: fit-content;
+        font-weight: bold;
+        font-family: Verdana;
+    }
+
+    .detail {
+        font-size: 12rem;
+        width: 300rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        font-family: Verdana;
+        margin: 0;
+    }
+
+    .but {
+        button {
+            display: inline-block;
+            border-radius: 6px;
+            background-color: #1565c0;            ;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 18rem;
+            font-family: verdana;
+            width: 100rem;
+            height: 30rem;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            margin-left: 200rem;
+            margin-top: 28rem;
+            vertical-align:middle;
+          }
+          
+          button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          
+          button span:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20rem;
+            transition: 0.5s;
+          }
+          
+          button:hover span {
+            padding-right: 25rem;
+          }
+          
+          button:hover span:after {
+            opacity: 1;
+            right: 0;
+          }
+    }
+}

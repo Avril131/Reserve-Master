@@ -1,14 +1,16 @@
 #reserve {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-left: 256rem;
-  width: 1158rem;
+  width: 1154rem;
 }
 #reserve .ant-page-header-heading-title {
   width: fit-content !important;
   font-size: 25rem;
 }
 #reserve #choose_box {
+  width: 868rem;
   display: flex;
   margin-left: 20rem;
   margin-top: 20rem;
@@ -43,5 +45,33 @@
 #reserve #choose_box .ant-select-single .ant-select-selector .ant-select-selection-item {
   line-height: 32rem;
   font-size: 14rem;
+  font-family: Verdana;
+}
+#reserve #classroom_box {
+  margin-bottom: 60rem;
+}
+#reserve #right {
+  width: 250rem;
+  margin: 10rem;
+  height: 500px;
+  position: fixed;
+  right: 0rem;
+  top: 100rem;
+  border-radius: 15px;
+  background-color: #90caf9;
+  color: #FFF;
+}
+#reserve #right #attention_title {
+  font-size: 20rem;
+  margin: 10rem;
+  height: fit-content;
+  font-weight: bold;
+  font-family: Verdana;
+}
+#reserve #right .attention_detail {
+  font-size: 14rem;
+  margin-left: 10rem;
+  height: fit-content;
+  font-weight: 500;
   font-family: Verdana;
 }

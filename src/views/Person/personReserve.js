@@ -11,46 +11,48 @@ class personReserve extends React.Component {
     //改变state里的值 : this.setState({ })
   }
   componentDidMount = () => {
-    const a = [[]]
-    const result = request("get", "/classroom/all");
-    this.setState({
-      reserveList: result.data,
-    });
-    console.log(result.data);
+    const data = request
+      .get("/reservation", {
+        userNo: this.props.No,
+      })
+      .then((res) => {
+        this.setState({ reserveList: Object.values(res) });
+      });
+  };
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    const data = request
+      .get("/reservation", {
+        userNo: nextProps.No,
+      })
+      .then((res) => {
+        this.setState({ reserveList: Object.values(res) });
+      });
+  }
+  date_o = (s) => {
+    s = s.slice(0, 10);
+    return s;
   };
   render() {
     return (
-      <div id="personReserve">
+      <div className="personReserve">
         <p className="title">reserve information</p>
-        <div id="reserveBox">
-          <div id="boxHead">
+        <div className="reserveBox">
+          <div className="boxHead">
             <p>Reserve No</p>
             <p>Date</p>
             <p>Start</p>
             <p>continue</p>
             <p>location</p>
           </div>
-          <div className="boxDetail">
-            <p>1</p>
-            <p>2022.5.4</p>
-            <p>第4节</p>
-            <p>3节</p>
-            <p>勤6-201</p>
-          </div>
-          <div className="boxDetail">
-            <p>1</p>
-            <p>2022.5.4</p>
-            <p>第4节</p>
-            <p>3节</p>
-            <p>勤6-201</p>
-          </div>
-          <div className="boxDetail">
-            <p>1</p>
-            <p>2022.5.4</p>
-            <p>第4节</p>
-            <p>3节</p>
-            <p>勤6-201</p>
-          </div>
+          {this.state.reserveList.map((val) => (
+            <div className="boxDetail">
+              <p>{val.reservation_id}</p>
+              <p>{this.date_o(val.reservation_date)}</p>
+              <p>{val.reservation_start}</p>
+              <p>{val.reservation_time}</p>
+              <p>{val.reservation_classroom_id}</p>
+            </div>
+          ))}
         </div>
       </div>
     );

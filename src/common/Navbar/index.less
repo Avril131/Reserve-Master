@@ -5,6 +5,7 @@
   position: absolute;
   background-color: white;
 }
+
 .pic {
   height: 100rem;
   border-radius: 50%;
@@ -12,6 +13,7 @@
   margin-top: 60rem;
   margin-bottom: 20rem;
 }
+
 #usr_Name {
   width: 100%;
   height: 42rem;
@@ -23,16 +25,21 @@
   opacity: 1;
   text-align: center;
 }
+
 .link {
   font-size: 20rem;
   font-family: Verdana;
   line-height: 35rem;
   color: #404040;
 }
+
 .icon {
   width: 25rem;
 }
+
 .button--winona {
+  color: #37474f;
+  border-color: #37474f;
   width: 150rem;
   display: block;
   margin: 10rem;
@@ -57,6 +64,7 @@
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
+
 .button--winona::after {
   content: attr(data-text);
   position: absolute;
@@ -69,41 +77,50 @@
   -webkit-transform: translate3d(0, 25%, 0);
   transform: translate3d(0, 25%, 0);
 }
-.button--winona > span {
+
+.button--winona>span {
   display: block;
 }
+
 .button--winona.button--inverted {
   color: #7986cb;
 }
+
 .button--winona.button--inverted:after {
   color: #fff;
 }
+
 .button--winona::after,
-.button--winona > span {
+.button--winona>span {
   padding: 1em 2em;
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s;
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
+
 .button--winona:hover {
   border-color: #3f51b5;
   background-color: rgba(63, 81, 181, 0.1);
 }
+
 .button--winona.button--inverted:hover {
   border-color: #21333C;
   background-color: #21333C;
 }
+
 .button--winona:hover::after {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.button--winona:hover > span {
+
+.button--winona:hover>span {
   opacity: 0;
   -webkit-transform: translate3d(0, -25%, 0);
   transform: translate3d(0, -25%, 0);
 }
+
 .Modal {
   width: 100vw;
   height: 100vh;
@@ -114,53 +131,58 @@
   z-index: 999;
   top: 0;
   left: 0;
-}
-.Modal .black {
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  opacity: 70%;
-  position: absolute;
-}
-.Modal .box {
-  background-color: #F8F8F8;
-  padding: 25px 94px 35px 94px;
-  margin: auto;
-  border-radius: 26px;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.Modal .box .text {
-  font-size: 15px;
-  font-weight: bold;
-  color: #333333;
-}
-.Modal .box .title {
-  text-align: center;
-  font-size: 25px;
-  font-weight: bold;
-  color: #333333;
-}
-.Modal .box .input {
-  padding: 21px;
-  width: 340px;
-  border-radius: 14px;
-  font-size: 20px;
-}
-.Modal .box .but {
-  cursor: pointer;
-  margin: 0 auto;
-  background-color: #050407;
-  color: #ffffff;
-  font-size: 18px;
-  margin-bottom: 21px;
-  width: 240px;
-  text-align: center;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 14px;
-  margin-top: 20px;
+
+  .black {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 70%;
+    position: absolute;
+  }
+
+  .box {
+    background-color: #F8F8F8;
+    padding: 25px 94px 35px 94px;
+    margin: auto;
+    border-radius: 26px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .text {
+      font-size: 15px;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .input {
+      padding: 21px;
+      width: 340px;
+      border-radius: 14px;
+      font-size: 20px;
+    }
+
+    .but {
+      cursor: pointer;
+      margin: 0 auto;
+      background-color: #050407;
+      color: #ffffff;
+      font-size: 18px;
+      margin-bottom: 21px;
+      width: 240px;
+      text-align: center;
+      height: 60px;
+      line-height: 60px;
+      border-radius: 14px;
+      margin-top: 20px;
+    }
+  }
 }

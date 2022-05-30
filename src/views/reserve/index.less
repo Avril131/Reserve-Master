@@ -1,14 +1,17 @@
 #reserve {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-left: 256rem;
-    width: 1158rem;
+    width: 1154rem;
+
     .ant-page-header-heading-title {
-        width: fit-content!important;
+        width: fit-content !important;
         font-size: 25rem;
     }
 
     #choose_box {
+        width: 868rem;
         display: flex;
         margin-left: 20rem;
         margin-top: 20rem;
@@ -18,7 +21,7 @@
             width: fit-content;
             height: 24rem;
             font-size: 20rem;
-            font-family:italic 2em Georgia, serif;
+            font-family: italic 2em Georgia, serif;
             font-weight: bold;
             line-height: 24rem;
             color: #333333;
@@ -26,7 +29,7 @@
         }
 
         #choose_day {
-            .ant-radio-button-wrapper{
+            .ant-radio-button-wrapper {
                 font-size: 14rem;
                 height: 32rem;
                 line-height: 32rem;
@@ -42,12 +45,46 @@
         #choose_last {
             margin-left: 40rem;
         }
+
         .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
             height: 32rem;
         }
+
         .ant-select-single .ant-select-selector .ant-select-selection-item {
             line-height: 32rem;
             font-size: 14rem;
+            font-family: Verdana;
+        }
+    }
+
+    #classroom_box {
+        margin-bottom: 60rem;
+    }
+
+    #right {
+        width: 250rem;
+        margin: 10rem;
+        height: 500px;
+        position: fixed;
+        right: 0rem;
+        top: 100rem;
+        border-radius: 15px;
+        background-color: #90caf9;
+        color: #FFF;
+
+        #attention_title {
+            font-size: 20rem;
+            margin: 10rem;
+            height: fit-content;
+            font-weight: bold;
+            font-family: Verdana;
+        }
+
+        .attention_detail {
+            font-size: 14rem;
+            margin-left: 10rem;
+            height: fit-content;
+            font-weight:500;
             font-family: Verdana;
         }
     }

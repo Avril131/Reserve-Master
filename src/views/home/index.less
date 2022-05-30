@@ -1,18 +1,26 @@
 #home {
   display: flex;
   flex-direction: column;
-  height: 580rem;
+  height: fit-content;
   margin-left: 256rem;
+  margin-bottom: 200px;
+
   #home_content {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+
+    .ant-carousel {
+      width: 600rem;
+    }
+
     .carousel_part {
       img {
         width: 600rem;
         height: 348rem;
       }
     }
+
     #form_part {
       display: flex;
       flex-direction: column;
@@ -20,63 +28,68 @@
       margin-left: 5rem;
 
       #form_h {
-          display: flex;
-          flex-direction: row;
-          margin-bottom: 10rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
         .form_head {
           font-family: verdana;
           font-weight: bold;
-          font-size: 20rem;
-          line-height: 20rem;
-          margin-top: 5rem;
+          font-size: 20px;
+          line-height: 40px;
+          margin-top: 5px;
+          margin-bottom: 0;
         }
+
         button {
-            display: inline-block;
-            border-radius: 6px;
-            background-color: #6666FF;            ;
-            border: none;
-            color: #FFFFFF;
-            text-align: center;
-            font-size: 18rem;
-            font-family: verdana;
-            width: 100rem;
-            transition: all 0.5s;
-            cursor: pointer;
-            margin: 5px;
-            margin-left: 70rem;
-            vertical-align:middle;
-          }
-          
-          button span {
-            cursor: pointer;
-            display: inline-block;
-            position: relative;
-            transition: 0.5s;
-          }
-          
-          button span:after {
-            content: '»';
-            position: absolute;
-            opacity: 0;
-            top: 0;
-            right: -20rem;
-            transition: 0.5s;
-          }
-          
-          button:hover span {
-            padding-right: 25rem;
-          }
-          
-          button:hover span:after {
-            opacity: 1;
-            right: 0;
-          }
+          display: inline-block;
+          border-radius: 6px;
+          margin-top: 10px;
+          background-color: #6666FF;
+          margin-bottom: 0;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 18px;
+          font-family: verdana;
+          width: 100px;
+          height: 40px;
+          transition: all 0.5s;
+          cursor: pointer;
+          vertical-align: middle;
+        }
+
+        button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+
+        button span:after {
+          content: '»';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20rem;
+          transition: 0.5s;
+        }
+
+        button:hover span {
+          padding-right: 25rem;
+        }
+
+        button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
       }
 
       #select {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        margin-top: 20px;
 
         .choose_p {
           line-height: 32rem;
@@ -84,18 +97,202 @@
           font-family: Verdana;
           font-size: 15rem;
           font-weight: bold;
+          margin-bottom: 0;
         }
+
         #choose_day {
           display: flex;
           flex-direction: row;
         }
+
         #choose_start {
           display: flex;
           flex-direction: row;
         }
+
         #choose_last {
           display: flex;
           flex-direction: row;
+        }
+      }
+
+    }
+
+    .personReserve {
+      width: 1154rem;
+      margin: 0 auto;
+      padding-bottom: 100rem;
+
+      .title {
+        width: fit-content;
+        height: 42rem;
+        font-size: 30px;
+        font-family: Verdana;
+        font-weight: bold;
+        line-height: 42rem;
+        color: #333333;
+        opacity: 1;
+      }
+
+      .reserveBox {
+        margin-top: 28rem;
+        width: 1154rem;
+        height: fit-content;
+        background: #F8F8F8;
+        opacity: 1;
+        border-radius: 25px;
+        padding-top: 60rem;
+        padding-bottom: 30rem;
+
+        .boxHead {
+          margin: 0 auto;
+          width: 1116rem;
+          height: 60rem;
+          background: #F2F2F2;
+          opacity: 1;
+          border-radius: 13px;
+          padding: 0 18rem;
+          display: grid;
+          grid-template-columns: 180rem 270rem 180rem 180rem 270rem;
+
+          p {
+            width: fit-content;
+            height: 60rem;
+            font-size: 18px;
+            font-family: Verdana;
+            font-weight: bold;
+            line-height: 60rem;
+            color: #333333;
+            opacity: 1;
+          }
+        }
+
+        .boxDetail {
+          margin: 0 auto;
+          width: 1116rem;
+          height: 60rem;
+          opacity: 1;
+          border-radius: 13px;
+          padding: 0 18rem;
+          display: grid;
+          grid-template-columns: 180rem 270rem 180rem 180rem 270rem;
+
+          p {
+            width: fit-content;
+            height: 60rem;
+            font-size: 18px;
+            font-family: Verdana;
+            font-weight: 400;
+            line-height: 60rem;
+            color: #333333;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .res {
+      margin: 20rem;
+      margin-top: 100rem;
+      width: 1000rem;
+      height: 42rem;
+      font-size: 30px;
+      font-family: Verdana;
+      font-weight: bold;
+      line-height: 42rem;
+      color: #333333;
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 1158px) {
+    #home_content {
+      flex-wrap: wrap;
+
+      .ant-carousel {
+        width: 1148rem;
+      }
+
+      .carousel_part {
+        img {
+          width: 1148rem;
+          height: 672rem;
+        }
+      }
+
+      #form_part {
+        margin-top: 30rem;
+        margin-left: 0rem;
+
+        #form_h {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 10rem;
+
+          .form_head {
+            font-family: verdana;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 20px;
+          }
+
+          button {
+            margin-right: 10px;
+          }
+        }
+
+        #select {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+
+          .choose_p {
+            line-height: 32px;
+            margin-right: 3px;
+            font-family: Verdana;
+            font-size: 15px;
+            font-weight: bold;
+          }
+
+          #choose_day {
+            display: flex;
+            flex-direction: row;
+          }
+
+          #choose_start {
+            display: flex;
+            flex-direction: row;
+          }
+
+          #choose_last {
+            display: flex;
+            flex-direction: row;
+          }
+        }
+      }
+
+      #classForm {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 524rem;
+        width: 1148rem;
+        margin-top: 10rem;
+
+        .b_form {
+          background-color: white;
+          width: 164rem;
+          height: 43.667rem;
+          border: 1rem solid gray;
+          margin: 0;
+        }
+
+        .r_form {
+          background-color: #CCE6FF;
+          width: 164rem;
+          height: 43.667rem;
+          border: 1rem solid gray;
+          margin: 0;
         }
       }
     }
