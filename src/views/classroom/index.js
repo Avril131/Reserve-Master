@@ -5,6 +5,7 @@ import Back from "../../common/Back/index";
 import { Carousel, DatePicker, Select } from "antd";
 import Form from "../../common/ClassForm";
 import img1 from "../../asset/1.JPG";
+import { img_group } from "../../asset/classroom/img";
 import request from "../../api/request";
 import { message } from "antd";
 import moment from "moment";
@@ -103,6 +104,7 @@ export default function Classroom() {
           return;
         }
       });
+    if (!judge) message.error("The time period you selected is occupied");
   };
   const reserve = () => {
     //console.log("day:" + day + " start:" + start + " last:" + last);
@@ -153,13 +155,7 @@ export default function Classroom() {
 
       <Carousel autoplay style={{ width: "1200px", height: "300px" }}>
         <div className="photo">
-          <img src={img1}></img>
-        </div>
-        <div className="photo">
-          <img src={img1}></img>
-        </div>
-        <div className="photo">
-          <img src={img1}></img>
+          <img src={img_group["p" + (params.id % 4)]}></img>
         </div>
         <div className="photo">
           <img src={img1}></img>

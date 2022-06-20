@@ -27,25 +27,53 @@ class Form extends Component {
     return (
       <div id="classForm">
         {this.state.mon.map((ele, index) => {
-          return <div key={index} className={formClass[Number(ele)]}></div>;
+          return (
+            <div key={index} className={formClass[Number(ele)]}>
+              Mon.{index + 1}
+            </div>
+          );
         })}
         {this.state.tue.map((ele, index) => {
-          return <div key={index} className={formClass[Number(ele)]}></div>;
+          return (
+            <div key={index} className={formClass[Number(ele)]}>
+              Tue.{index + 1}
+            </div>
+          );
         })}
         {this.state.wed.map((ele, index) => {
-          return <div key={index} className={formClass[Number(ele)]}></div>;
+          return (
+            <div key={index} className={formClass[Number(ele)]}>
+              Wed.{index + 1}
+            </div>
+          );
         })}
         {this.state.thu.map((ele, index) => {
-          return <div key={index} className={formClass[Number(ele)]}></div>;
+          return (
+            <div key={index} className={formClass[Number(ele)]}>
+              Thu.{index + 1}
+            </div>
+          );
         })}
         {this.state.fri.map((ele, index) => {
-          return <div key={index} className={formClass[Number(ele)]}></div>;
+          return (
+            <div key={index} className={formClass[Number(ele)]}>
+              Fri.{index + 1}
+            </div>
+          );
         })}
         {this.state.sat.map((ele, index) => {
-          return <div key={index} className={formClass[Number(ele)]}></div>;
+          return (
+            <div key={index} className={formClass[Number(ele)]}>
+              Sat.{index + 1}
+            </div>
+          );
         })}
         {this.state.sun.map((ele, index) => {
-          return <div key={index} className={formClass[Number(ele)]}></div>;
+          return (
+            <div key={index} className={formClass[Number(ele)]}>
+              Sun.{index + 1}
+            </div>
+          );
         })}
       </div>
     );

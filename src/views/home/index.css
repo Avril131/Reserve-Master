@@ -240,14 +240,56 @@
     margin-top: 10rem;
   }
   #home #home_content #classForm .b_form {
-    background-color: white;
+    background-color: #e3f2fd;
     width: 164rem;
     height: 43.667rem;
     border: 1rem solid gray;
     margin: 0;
   }
   #home #home_content #classForm .r_form {
-    background-color: #CCE6FF;
+    background-color: #90caf9;
+    width: 164rem;
+    height: 43.667rem;
+    border: 1rem solid gray;
+    margin: 0;
+  }
+  #home #home_content #classForm .c_form {
+    background-color: #64b5f6;
+    width: 164rem;
+    height: 43.667rem;
+    border: 1rem solid gray;
+    margin: 0;
+  }
+  #home #home_content #classForm .d_form {
+    background-color: #42a5f5;
+    width: 164rem;
+    height: 43.667rem;
+    border: 1rem solid gray;
+    margin: 0;
+  }
+  #home #home_content #classForm .e_form {
+    background-color: #2196f3;
+    width: 164rem;
+    height: 43.667rem;
+    border: 1rem solid gray;
+    margin: 0;
+  }
+  #home #home_content #classForm .f_form {
+    background-color: #1e88e5;
+    width: 164rem;
+    height: 43.667rem;
+    border: 1rem solid gray;
+    margin: 0;
+  }
+  #home #home_content #classForm .g_form {
+    background-color: #1976d2;
+    width: 164rem;
+    height: 43.667rem;
+    border: 1rem solid gray;
+    margin: 0;
+  }
+  #home #home_content #classForm .h_form {
+    background-color: #1565c0;
     width: 164rem;
     height: 43.667rem;
     border: 1rem solid gray;

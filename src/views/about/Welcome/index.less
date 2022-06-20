@@ -32,12 +32,24 @@
         opacity: 1;
       }
 
-      p {
-        margin-top: 24rem;
-        width: 472rem;
-        margin-top: 47rem;
-        font-size: 16rem;
+      div {
         margin-top: 29rem;
+      }
+
+      p {
+        width: 472rem;
+        font-size: 16rem;
+        width: 590rem;
+        font-size: 16rem;
+        font-family: PingFang HK;
+        font-weight: 600;
+        color: #333333;
+        opacity: 1;
+      }
+
+      span {
+        width: 472rem;
+        font-size: 16rem;
         width: 590rem;
         font-size: 16rem;
         font-family: PingFang HK;
@@ -47,7 +59,8 @@
       }
     }
 
-    .welcome_imggroup {
+    .welcome_imgGroup {
+      display: grid;
       margin-top: 0rem;
       width: 473rem;
       height: 473rem;
@@ -56,11 +69,101 @@
       grid-row-gap: 13rem;
       grid-column-gap: 13rem;
 
+      .img_card {
+        div {
+          width: 149rem;
+          height: 149rem;
+          position: relative;
+          transition: transform 0.6s;
+          transform-style: preserve-3d;
+          text-align: center;
+        }
+
+        &:hover div {
+          transform: rotateY(180deg);
+        }
+
+        .back {
+          transform: rotateY(180deg);
+        }
+      }
+
       img {
         width: 149rem;
         height: 149rem;
+        border-radius: 5px;
+        transition: transform 0.6s;
+        border-radius: 6px;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        left: 0;
+        top: 0;
+        background-size: contain;
       }
     }
 
+  }
+
+  @media screen and (max-width: 1158px) {
+    .up {
+      flex-direction: column;
+      .up_left {
+        width: 1154rem;
+
+        h1 {
+          width: 1154rem;
+          height: fit-content;
+        }
+
+        p {
+          font-size: 30rem;
+        }
+      }
+
+      .welcome_imgGroup {
+        display: grid;
+        margin-top: 0*2rem;
+        width: 473*2rem;
+        height: 473*2rem;
+        grid-template-columns: repeat(3, 149*2rem);
+        grid-template-rows: repeat(3, 149*2rem);
+        grid-row-gap: 13*2rem;
+        grid-column-gap: 13*2rem;
+  
+        .img_card {
+          div {
+            width: 149*2rem;
+            height: 149*2rem;
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            text-align: center;
+          }
+  
+          &:hover div {
+            transform: rotateY(180deg);
+          }
+  
+          .back {
+            transform: rotateY(180deg);
+          }
+        }
+  
+        img {
+          width: 149*2rem;
+          height: 149*2rem;
+          border-radius: 5px;
+          transition: transform 0.6s;
+          border-radius: 6px;
+          position: absolute;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          left: 0;
+          top: 0;
+          background-size: contain;
+        }
+      }
+    }
   }
 }

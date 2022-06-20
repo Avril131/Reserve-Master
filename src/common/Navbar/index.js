@@ -75,7 +75,7 @@ class Navbar extends React.Component {
     if (this.state.account || this.state.password) {
       log = false;
       /**登录 */
-      log = request
+      request
         .post(
           "/login",
           {
@@ -85,21 +85,25 @@ class Navbar extends React.Component {
           "form"
         )
         .then((res) => {
-          localStorage.setItem("name", res.message);
-          localStorage.setItem("id", res.userId);
-          this.setState({ account: "" });
+          console.log(res);
+          if (res.userId) {
+            localStorage.setItem("name", res.message);
+            localStorage.setItem("id", res.userId);
+            this.setState({ account: "" });
+            message.success("Login success");
+            event.emit("eventMsg", this.state.account);
+            this.setState({ Modal_show: false });
+            localStorage.setItem("no", this.state.account);
+            return;
+          } else {
+            message.error(res.message);
+            this.setState({ Modal_show: false });
+            this.setState({ account: "", password: "" });
+            message.error("Something Wrong happened");
+            log = false;
+          }
         });
-      if (!log) return;
-      log = true;
     }
-    if (log) {
-      message.success("Login success");
-      event.emit("eventMsg", this.state.account);
-      this.setState({ Modal_show: false });
-      localStorage.setItem("no", this.state.account);
-      return;
-    }
-    message.error("Something Wrong happened, try it later please");
   };
   Register = async () => {
     if (this.state.account === "") {
@@ -144,16 +148,13 @@ class Navbar extends React.Component {
             return;
           }
           if (res.code === 200) {
+            message.success("Register success, Please Login");
+            this.setState({ Modal_show2: false, Modal_show: true });
             reg = true;
+            return;
           }
         });
     }
-    if (reg) {
-      message.success("Register success, Please Login");
-      this.setState({ Modal_show2: false, Modal_show: true });
-      return;
-    }
-    message.error("Something Wrong happened, try it later please");
   };
   render() {
     const no = localStorage.getItem("no");
@@ -235,6 +236,7 @@ class Navbar extends React.Component {
               <input
                 className="input"
                 type="text"
+                value={this.state.account}
                 placeholder={"Please enter your account"}
                 onChange={(e) => this.setState({ account: e.target.value })}
               />
@@ -243,7 +245,8 @@ class Navbar extends React.Component {
               <p className="text">Password</p>
               <input
                 className="input"
-                type="text"
+                type="password"
+                value={this.state.password}
                 placeholder={"Please enter your password"}
                 onChange={(e) => this.setState({ password: e.target.value })}
               />
@@ -279,7 +282,7 @@ class Navbar extends React.Component {
               <p className="text">Password</p>
               <input
                 className="input"
-                type="text"
+                type="password"
                 placeholder={"Please enter your password"}
                 onChange={(e) => this.setState({ password: e.target.value })}
               />
@@ -288,7 +291,7 @@ class Navbar extends React.Component {
               <p className="text">Please enter your password again</p>
               <input
                 className="input"
-                type="text"
+                type="password"
                 placeholder={"Please enter your password again"}
                 onChange={(e) => this.setState({ password_same: e.target.value })}
               />

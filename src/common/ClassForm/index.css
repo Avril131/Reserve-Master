@@ -6,11 +6,17 @@
   width: 530rem;
   margin-top: 10rem;
 }
+#classForm div {
+  text-align: center;
+  color: #d0f0ff;
+  font-weight: bolder;
+}
 #classForm .b_form {
   background-color: #e3f2fd;
   width: 77rem;
   height: 20rem;
   border: 1rem solid gray;
+  color: #93d5fb;
   margin: 0;
 }
 #classForm .r_form {

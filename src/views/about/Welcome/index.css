@@ -29,11 +29,11 @@
   color: #333333;
   opacity: 1;
 }
-.welcome .up .up_left p {
-  margin-top: 24rem;
-  width: 472rem;
-  margin-top: 47rem;
+.welcome .up .up_left div {
   margin-top: 29rem;
+}
+.welcome .up .up_left p {
+  width: 472rem;
   width: 590rem;
   font-size: 16rem;
   font-family: PingFang HK;
@@ -41,7 +41,17 @@
   color: #333333;
   opacity: 1;
 }
-.welcome .up .welcome_imggroup {
+.welcome .up .up_left span {
+  width: 472rem;
+  width: 590rem;
+  font-size: 16rem;
+  font-family: PingFang HK;
+  font-weight: 600;
+  color: #333333;
+  opacity: 1;
+}
+.welcome .up .welcome_imgGroup {
+  display: grid;
   margin-top: 0rem;
   width: 473rem;
   height: 473rem;
@@ -50,7 +60,82 @@
   grid-row-gap: 13rem;
   grid-column-gap: 13rem;
 }
-.welcome .up .welcome_imggroup img {
+.welcome .up .welcome_imgGroup .img_card div {
   width: 149rem;
   height: 149rem;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  text-align: center;
+}
+.welcome .up .welcome_imgGroup .img_card:hover div {
+  transform: rotateY(180deg);
+}
+.welcome .up .welcome_imgGroup .img_card .back {
+  transform: rotateY(180deg);
+}
+.welcome .up .welcome_imgGroup img {
+  width: 149rem;
+  height: 149rem;
+  border-radius: 5px;
+  transition: transform 0.6s;
+  border-radius: 6px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  left: 0;
+  top: 0;
+  background-size: contain;
+}
+@media screen and (max-width: 1158px) {
+  .welcome .up {
+    flex-direction: column;
+  }
+  .welcome .up .up_left {
+    width: 1154rem;
+  }
+  .welcome .up .up_left h1 {
+    width: 1154rem;
+    height: fit-content;
+  }
+  .welcome .up .up_left p {
+    font-size: 30rem;
+  }
+  .welcome .up .welcome_imgGroup {
+    display: grid;
+    margin-top: 0rem;
+    width: 946rem;
+    height: 946rem;
+    grid-template-columns: repeat(3, 298rem);
+    grid-template-rows: repeat(3, 298rem);
+    grid-row-gap: 26rem;
+    grid-column-gap: 26rem;
+  }
+  .welcome .up .welcome_imgGroup .img_card div {
+    width: 298rem;
+    height: 298rem;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    text-align: center;
+  }
+  .welcome .up .welcome_imgGroup .img_card:hover div {
+    transform: rotateY(180deg);
+  }
+  .welcome .up .welcome_imgGroup .img_card .back {
+    transform: rotateY(180deg);
+  }
+  .welcome .up .welcome_imgGroup img {
+    width: 298rem;
+    height: 298rem;
+    border-radius: 5px;
+    transition: transform 0.6s;
+    border-radius: 6px;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    left: 0;
+    top: 0;
+    background-size: contain;
+  }
 }

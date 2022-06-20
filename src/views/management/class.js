@@ -1,6 +1,8 @@
 import React from "react";
 import "./index.css";
 import { DatePicker, Select } from "antd";
+import request from "../../api/request";
+import { message } from "antd";
 const { RangePicker } = DatePicker;
 
 const { Option } = Select;
@@ -8,6 +10,8 @@ class Class extends React.Component {
   constructor(props) {
     super(props); //调用父类构造函数
     this.state = {
+      classroomId: "",
+      id: "",
       name: "",
       day: 1,
       start: 1,
@@ -15,9 +19,15 @@ class Class extends React.Component {
       Modal_show: false,
       Modal_show2: false,
       Modal_show3: false,
+      list: [],
     };
     //直接用state里的值 ： this.state
     //改变state里的值 : this.setState({ })
+  }
+  componentDidMount() {
+    request.get("/course/all").then((res) => {
+      this.setState({ list: Object.values(res) });
+    });
   }
   closeModal = () => {
     this.setState({ Modal_show: false });
@@ -28,7 +38,70 @@ class Class extends React.Component {
   closeModal3 = () => {
     this.setState({ Modal_show3: false });
   };
+  Add = () => {
+    request
+      .get("/course/add", {
+        name: this.state.name,
+        start: this.state.start,
+        time: this.state.last,
+        date: "2022-4-27",
+        classroomId: this.state.classroomId,
+        week: this.state.day,
+      })
+      .then((res) => {
+        if (res === "ok") {
+          message.success("Add Success");
+        } else {
+          message.error("Something is error");
+        }
+      });
+    request.get("/course/all").then((res) => {
+      this.setState({ list: Object.values(res) });
+    });
+    this.closeModal();
+  };
+  delete = () => {
+    request
+      .get("/course/delete", {
+        courseId: this.state.id,
+      })
+      .then((res) => {
+        if (res === "ok") {
+          message.success("Delete Success");
+        } else {
+          message.error("Something is error");
+        }
+      });
+    request.get("/course/all").then((res) => {
+      this.setState({ list: Object.values(res) });
+    });
+    this.closeModal2();
+  };
+  update = () => {
+    request
+      .get("/course/update", {
+        name: this.state.name,
+        start: this.state.start,
+        time: this.state.last,
+        date: "2022-4-27",
+        classroomId: this.state.classroomId,
+        week: this.state.day,
+        id: this.state.id,
+      })
+      .then((res) => {
+        if (res === "ok") {
+          message.success("Update Success");
+        } else {
+          message.error("Something is error");
+        }
+      });
+    request.get("/course/all").then((res) => {
+      this.setState({ list: Object.values(res) });
+    });
+    this.closeModal3();
+  };
   render() {
+    const list = this.state.list;
     return (
       <div id="class">
         <div className="buttonBox">
@@ -50,6 +123,27 @@ class Class extends React.Component {
             <span>Update Course</span>
           </button>
         </div>
+        {list.length !== 0 ? (
+          <div className="course_all">
+            <h2>All Course</h2>
+            <div className="column">
+              <h2>ID</h2>
+              <h2>Name</h2>
+              <h2>Start</h2>
+              <h2>Last</h2>
+            </div>
+            {list.map((val, index) => (
+              <div key={index} className="column">
+                <h2>{val.course_id}</h2>
+                <h2>{val.course_name}</h2>
+                <h2>{val.course_start}</h2>
+                <h2>{val.course_time}</h2>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div></div>
+        )}
 
         <div className="Modal" style={{ display: this.state.Modal_show ? "flex" : "none" }}>
           <div className="black" onClick={this.closeModal}></div>
@@ -63,6 +157,13 @@ class Class extends React.Component {
                 placeholder={"Please enter class name"}
                 onChange={(e) => this.setState({ name: e.target.value })}
               />
+              <p className="text">ClassroomId</p>
+              <input
+                className="input"
+                type="text"
+                placeholder={"Please enter classroomid"}
+                onChange={(e) => this.setState({ classroomId: e.target.value })}
+              />
             </div>
             <p className="text" style={{ marginTop: "10px" }}>
               Class Week
@@ -153,7 +254,7 @@ class Class extends React.Component {
                 </Option>
               </Select>
             </div>
-            <div className="but" onClick={this.Login}>
+            <div className="but" onClick={this.Add}>
               Add
             </div>
           </div>
@@ -163,15 +264,15 @@ class Class extends React.Component {
           <div className="box">
             <p className="title">Please Delete Class Here</p>
             <div>
-              <p className="text">Class Name</p>
+              <p className="text">Class Id</p>
               <input
                 className="input"
                 type="text"
-                placeholder={"Please enter class name"}
-                onChange={(e) => this.setState({ account: e.target.value })}
+                placeholder={"Please enter class id"}
+                onChange={(e) => this.setState({ id: e.target.value })}
               />
             </div>
-            <div className="but" onClick={this.Login}>
+            <div className="but" onClick={this.delete}>
               Delete
             </div>
           </div>
@@ -181,12 +282,26 @@ class Class extends React.Component {
           <div className="box">
             <p className="title">Please Update Class Here</p>
             <div>
+              <p className="text">Class Id</p>
+              <input
+                className="input"
+                type="text"
+                placeholder={"Please enter class id"}
+                onChange={(e) => this.setState({ id: e.target.value })}
+              />
               <p className="text">Class Name</p>
               <input
                 className="input"
                 type="text"
                 placeholder={"Please enter class name"}
-                onChange={(e) => this.setState({ account: e.target.value })}
+                onChange={(e) => this.setState({ name: e.target.value })}
+              />
+              <p className="text">ClassroomId</p>
+              <input
+                className="input"
+                type="text"
+                placeholder={"Please enter classroomid"}
+                onChange={(e) => this.setState({ classroomId: e.target.value })}
               />
             </div>
             <p className="text" style={{ marginTop: "10px" }}>
@@ -217,7 +332,6 @@ class Class extends React.Component {
               <Select
                 onChange={(e) => this.setState({ start: e })}
                 defaultValue={this.state.start}
-                key={this.state.start}
                 style={{ width: "80px" }}
               >
                 <Option value="1">1</Option>
@@ -278,7 +392,7 @@ class Class extends React.Component {
                 </Option>
               </Select>
             </div>
-            <div className="but" onClick={this.Login}>
+            <div className="but" onClick={this.update}>
               Update
             </div>
           </div>

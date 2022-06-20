@@ -112,5 +112,49 @@
         }
     }
 
+    .course_all {
+        margin-bottom: 70px;
 
+        .column {
+            display: grid;
+            grid-template-columns: repeat(4, 200rem);
+            grid-column-gap: 20rem;
+        }
+    }
+
+    .classroom_all {
+        margin-bottom: 70px;
+
+        .column {
+            display: grid;
+            grid-template-columns: 200rem 400rem 200rem;
+            grid-column-gap: 20rem;
+        }
+    }
+
+    .reserve_all {
+        margin-bottom: 70px;
+
+        .column {
+            display: grid;
+            grid-template-columns: repeat(6, 133rem);
+            grid-column-gap: 20rem;
+
+            button {
+                width: 100%;
+                height: 36px;
+                line-height: 36px;
+                background: #2e82ff;
+                color: #ffffff;
+                font-size: 18px;
+                border-radius: 27px;
+                transform: scale(1);
+                transition: all 0.5s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
 }

@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import "./index.css";
 import { Carousel, PageHeader } from "antd";
 import img1 from "../../asset/1.JPG";
+import img2 from "../../asset/2.jpg";
+import img3 from "../../asset/3.jpg";
+import img4 from "../../asset/4.jpg";
 import Form from "../../common/ClassForm";
 import { Link } from "react-router-dom";
 import Navbar from "../../common/Navbar";
 import { Select } from "antd";
 import PersonReserve from "../Person/personReserve";
 import event from "../../common/event";
+import request from "../../api/request";
 const { Option } = Select;
 
 class home extends Component {
@@ -24,6 +28,9 @@ class home extends Component {
     //改变state里的值 : this.setState({ })
   }
   componentDidMount() {
+    request.get("/status/statusAll").then((res) => {
+      console.log(res);
+    });
     event.addListener("eventMsg", (val) => {
       this.setState({
         no: val,
@@ -74,13 +81,13 @@ class home extends Component {
                 <img src={img1}></img>
               </div>
               <div className="carousel_part">
-                <img src={img1}></img>
+                <img src={img2}></img>
               </div>
               <div className="carousel_part">
-                <img src={img1}></img>
+                <img src={img3}></img>
               </div>
               <div className="carousel_part">
-                <img src={img1}></img>
+                <img src={img4}></img>
               </div>
             </Carousel>
             <div id="form_part">
@@ -166,7 +173,7 @@ class home extends Component {
               <Form
                 mon={["1", "1", "1", "5", "5", "4", "4", "5", "5", "2", "2", "2"]}
                 tue={["7", "7", "2", "6", "1", "1", "1", "2", "2", "3", "3", "3"]}
-                wed={["6", "6", "6", "1", "1", "0", "0", "0", "0", "4", "4", "4"]}
+                wed={["6", "6", "6", "1", "1", "2", "2", "1", "1", "4", "4", "4"]}
                 thu={["3", "3", "3", "4", "4", "2", "2", "5", "5", "1", "1", "1"]}
                 fri={["1", "1", "7", "6", "1", "1", "1", "1", "2", "1", "2", "1"]}
                 sat={["5", "1", "7", "1", "1", "1", "1", "1", "2", "2", "2", "2"]}

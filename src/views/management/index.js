@@ -4,6 +4,7 @@ import { Radio, PageHeader } from "antd";
 import Class from "./class";
 import "./index.css";
 import Classroom from "./classroom";
+import Res from "./res";
 
 class management extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class management extends Component {
           <Radio.Group onChange={this.onChange} value={this.state.type} style={{ margin: "20px" }}>
             <Radio value={1}>Class</Radio>
             <Radio value={2}>Classroom</Radio>
+            <Radio value={3}>Reserve</Radio>
           </Radio.Group>
           <div style={{ width: "1154rem", display: "flex", justifyContent: "center" }}>
             <div style={{ display: this.state.type === 1 ? "block" : "none" }}>
@@ -37,6 +39,10 @@ class management extends Component {
             <div style={{ display: this.state.type === 2 ? "block" : "none" }}>
               <div className="title">You can add, delete or Update classroom here</div>
               <Classroom />
+            </div>
+            <div style={{ display: this.state.type === 3 ? "block" : "none" }}>
+              <div className="title">You can console reserve here</div>
+              <Res />
             </div>
           </div>
         </div>
